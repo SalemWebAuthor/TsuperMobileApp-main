@@ -24,8 +24,16 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.example.homepage"
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 34
     ndkVersion flutter.ndkVersion
+
+    defaultConfig {
+
+        minSdkVersion 20
+        targetSdkVersion 34
+        multiDexEnabled = true
+
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -64,4 +72,6 @@ flutter {
     source '../..'
 }
 
-dependencies {}
+dependencies {
+    implementation("androidx.multidex:multidex:2.0.1")
+}

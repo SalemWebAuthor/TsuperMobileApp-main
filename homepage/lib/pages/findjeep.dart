@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:homepage/pages/map_bata-libertad.dart';
 import 'package:homepage/pages/map_shop-lasalle.dart';
 import 'package:homepage/pages/map_shop-northbound.dart';
+import 'package:homepage/pages/map_shop-sanagustin.dart';
+import 'package:homepage/pages/map_mandalagan-libertad.dart';
 
 
 class FindJeepPage extends StatelessWidget {
@@ -15,29 +17,45 @@ class FindJeepPage extends StatelessWidget {
       routes: {
         '/map_bata-libertad': (context) => MapPageBataLibertad(),
         '/map_shop-lasalle': (context) => MapPageLaSalle(),
-        '/map_shop-northbound': (context) => MapPageNorthbound()
+        '/map_shop-northbound': (context) => MapPageNorthbound(),
+        '/map_shop-sanagustin': (context) => MapPageSanAgustin(),
+        '/map_mandalagan-libertad': (context) => MapPageMandalagan()
       
       },
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('TsuperPH Homepage'),
-        ),
+  
         backgroundColor: customColor,
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  ' ',
-                  style: Theme.of(context).textTheme.headline5,
-                ),
-              ),
+
+              SizedBox(height: 75),
+
+
+              Padding(  
+                padding: const EdgeInsets.all(20),
               
-              DashboardItem(title: 'BNK 2122', icon: Icons.car_rental, destinations: 'Bata - Libertad', route: '/map_bata-libertad'),
-              DashboardItem(title: 'CHN 3144', icon: Icons.car_rental, destinations: 'Shopping - Libertad\n(La Salle)', route: '/map_shop-lasalle'),
-              DashboardItem(title: 'JTY 1132', icon: Icons.car_rental, destinations: 'Shopping - Northbound', route: '/map_shop-northbound')
+                child: 
+                  Text(
+                    'Available Jeeps',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                  ),
+              
+              ),
+
+               SizedBox(height: 30),
+              
+              DashboardItem(title: 'BNK 2122', icon: Icons.directions_car, destinations: '       Bata - Libertad', route: '/map_bata-libertad'),
+              DashboardItem(title: 'CHN 3144', icon: Icons.directions_car, destinations: '   Shopping - Libertad\n(La Salle)', route: '/map_shop-lasalle'),
+              DashboardItem(title: 'JTY 1132', icon: Icons.directions_car, destinations: 'Shopping - Northbound', route: '/map_shop-northbound'),
+              DashboardItem(title: 'GHQ 1145', icon: Icons.directions_car, destinations: '    Shopping - Libertad\n(San Agustin)', route: '/map_shop-sanagustin'),
+              DashboardItem(title: 'JTY 1132', icon: Icons.directions_car, destinations: ' Mandalagan - Libertad', route: '/map_mandalagan-libertad')
+
 
               
             ],
@@ -74,13 +92,13 @@ class DashboardItem extends StatelessWidget {
                   icon,
                   size: 30,
                 ),
-                const SizedBox(width: 40), // Add some space between icon and text
+                const SizedBox(width: 10), // Add some space between icon and text
                 Text(
                   title,
                   style: Theme.of(context).textTheme.subtitle1,
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(width: 70),
+                const SizedBox(width: 30),
                 Text(
                   destinations,
                   style: Theme.of(context).textTheme.subtitle1,

@@ -5,8 +5,7 @@ class ReceiptPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Receipt', style: TextStyle(fontFamily: 'Poppins')), // Set font family
-        leading: Icon(Icons.receipt),
+        backgroundColor: Color.fromRGBO(255, 246, 143, 1),
       ),
       backgroundColor: Color.fromRGBO(255, 246, 143, 1), // Setting background color
       body: Padding(
@@ -93,8 +92,8 @@ class ReceiptPage extends StatelessWidget {
                     Navigator.pop(context); // Navigate back to the previous screen (homepage)
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 163, 167, 58),
-                    onPrimary: Colors.white,
+                    backgroundColor: Color.fromARGB(255, 163, 167, 58),
+                    disabledBackgroundColor: Colors.white,
                     padding: EdgeInsets.all(16.0),
                   ),
                   child: Text(

@@ -21,12 +21,10 @@ class MyApp extends StatelessWidget {
         '/receipt': (context) => ReceiptPage(),
         '/location': (context) => LocationPage(),
         '/find_jeep': (context) => FindJeepPage(),
-        '/pay_online': (context) => PayOnlinePage(),
+        '/pay_online': (context) => PayOnline(),
       },
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('TsuperPH Homepage'),
-        ),
+        
         backgroundColor: customColor,
         body: SingleChildScrollView(
           child: Column(
@@ -58,10 +56,10 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
               ),
-              DashboardItem(title: 'Receipt', icon: Icons.receipt, route: '/receipt'),
-              DashboardItem(title: 'Location', icon: Icons.location_on, route: '/location'),
               DashboardItem(title: 'Find Jeep', icon: Icons.directions_car, route: '/find_jeep'),
+              DashboardItem(title: 'Location', icon: Icons.location_on, route: '/location'),
               DashboardItem(title: 'Pay Online', icon: Icons.payment, route: '/pay_online'),
+              DashboardItem(title: 'Receipt', icon: Icons.receipt, route: '/receipt')
             ],
           ),
         ),
