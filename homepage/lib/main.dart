@@ -3,6 +3,7 @@ import 'pages/routes.dart';
 import 'pages/receipt.dart';
 import 'pages/findjeep.dart';
 import 'pages/payonline.dart';
+import 'pages/user.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         '/location': (context) => LocationPage(),
         '/find_jeep': (context) => FindJeepPage(),
         '/pay_online': (context) => PayOnline(),
+        '/user': (context) => UserPage()
       },
       home: Scaffold(
         
@@ -59,7 +61,8 @@ class MyApp extends StatelessWidget {
               DashboardItem(title: 'Find Jeep', icon: Icons.directions_car, route: '/find_jeep'),
               DashboardItem(title: 'Location', icon: Icons.location_on, route: '/location'),
               DashboardItem(title: 'Pay Online', icon: Icons.payment, route: '/pay_online'),
-              DashboardItem(title: 'Receipt', icon: Icons.receipt, route: '/receipt')
+              DashboardItem(title: 'Receipt', icon: Icons.receipt, route: '/receipt'),
+              DashboardItem(title: 'User', icon: Icons.account_circle_rounded, route: '/user')
             ],
           ),
         ),

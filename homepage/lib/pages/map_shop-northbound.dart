@@ -57,6 +57,11 @@ class MapPageNorthbound extends StatelessWidget {
                       const LatLng(10.67276351413886, 122.96265272311452),
                       const LatLng(10.673566574219787, 122.96218062568579),
                       const LatLng(10.673406504982818, 122.96071187814732),
+                      const LatLng(10.674537756360126, 122.96125791453301),
+                      const LatLng(10.675278042978748, 122.96128498005264),
+                      const LatLng(10.675863178421993, 122.96109552141692),
+                      const LatLng(10.683647417490667, 122.95715982383317),
+                      const LatLng(10.684096560989094, 122.95635117402529),
 
 
                       
@@ -79,6 +84,372 @@ class MapPageNorthbound extends StatelessWidget {
                       color: Color.fromARGB(255, 3, 119, 243),
                     ),
                   ),
+
+                  Marker(
+                    point: LatLng(10.703636, 122.962145),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_downward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.700520, 122.962160),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_downward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.697955, 122.961857),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_downward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.694436898018079, 122.96043072865612),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_downward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.690977914805137, 122.95906517076466),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_downward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.687101421351624, 122.95748719275338),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_downward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.684924599453316, 122.95663751228595),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_downward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.682867041150688, 122.95745684702166),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.south_east_outlined,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.680362168682427, 122.95870102198437),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.south_east,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.677260869469292, 122.96018796280134),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.south_east,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.674934874274232, 122.96112868046211),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_downward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.673712228567744, 122.96076453168492),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_downward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.671624773463527, 122.95988450548526),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_downward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.669447840731985, 122.95867067624434),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_downward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.667748033107333, 122.9592472451338),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_forward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.666585001364515, 122.96200870665685),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_forward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.665600894069687, 122.96431498221222),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_forward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.665919885286423, 122.96541079425148),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_upward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.667279990442006, 122.9651962175296),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.north_west,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.668997091217674, 122.96446116111699),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.north_west,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.670764979035114, 122.9636701150075),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.north_west,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.672645699529618, 122.9627514808205),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.north_west,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.673491604766175, 122.96152330145843),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.674062874940814, 122.96113555877369),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_upward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.676393770995064, 122.96083194103566),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.north_west,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.67882043936961, 122.95963221481101),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.north_west,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.681123645917399, 122.9585045341841),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.north_west,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.68361514523497, 122.95714836924384),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.north_west,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.68554169759364, 122.9569788486262),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_upward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.687175897167274, 122.9576529839638),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_upward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.689465110934943, 122.958585878870314),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_upward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(10.69402635528157, 122.96041816476337),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_upward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+                  Marker(
+                    point: LatLng(110.698154525124501, 122.96201755493206),
+                    width: 60,
+                    height: 60,
+
+                    child: Icon(
+                      Icons.arrow_upward,
+                      color: Color.fromARGB(255, 243, 55, 3),
+                    ),
+                  ),
+
+
+              
                 ],
               ),
             ],
