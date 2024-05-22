@@ -2,23 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'User Registration',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: RegistrationPage(),
-    );
-  }
-}
-
 class RegistrationPage extends StatefulWidget {
   @override
   _RegistrationPageState createState() => _RegistrationPageState();
@@ -26,8 +9,8 @@ class RegistrationPage extends StatefulWidget {
 
 class _RegistrationPageState extends State<RegistrationPage> {
   final _formKey = GlobalKey<FormState>();
-  String _username = '';
-  String _password = '';
+  String user_username = '';
+  String user_password = '';
 
   Future<void> _submitForm() async {
     if (_formKey.currentState!.validate()) {
@@ -40,8 +23,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
           'Content-Type': 'application/json',
         },
         body: json.encode({
-          'username': _username,
-          'password': _password,
+          'user_username': user_username,
+          'user_password': user_password,
         }),
       );
 
@@ -94,7 +77,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   return null;
                 },
                 onSaved: (value) {
-                  _username = value!;
+                  user_username = value!;
                 },
               ),
               TextFormField(
@@ -107,7 +90,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   return null;
                 },
                 onSaved: (value) {
-                  _password = value!;
+                  user_password = value!;
                 },
               ),
               SizedBox(height: 20),
