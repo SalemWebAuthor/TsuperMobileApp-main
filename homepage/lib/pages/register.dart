@@ -9,8 +9,11 @@ class RegistrationPage extends StatefulWidget {
 
 class _RegistrationPageState extends State<RegistrationPage> {
   final _formKey = GlobalKey<FormState>();
+  final Color customColor = Color.fromRGBO(255, 246, 143, 1);
   String user_username = '';
   String user_password = '';
+  String user_email = '';
+  String user_home_address = '';
 
   Future<void> _submitForm() async {
     if (_formKey.currentState!.validate()) {
@@ -25,6 +28,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
         body: json.encode({
           'user_username': user_username,
           'user_password': user_password,
+          'user_email': user_email,
+          'user_home_address': user_home_address
         }),
       );
 
@@ -58,18 +63,33 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
-      appBar: AppBar(
-        title: Text('User Registration'),
-      ),
+      backgroundColor: customColor,
+
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
             children: [
+
+              const SizedBox(height: 40),
+              const Text(
+                'Register',
+                style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                    ),
+                  ),
+                  const SizedBox(height: 40),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Username'),
+                decoration: InputDecoration(
+                  hintText: 'Username',
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your username';
@@ -80,8 +100,13 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   user_username = value!;
                 },
               ),
+              SizedBox(height: 10),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Password'),
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),),
                 obscureText: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -93,9 +118,47 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   user_password = value!;
                 },
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your email';
+                  }
+                  return null;
+                },
+                onSaved: (value) {
+                  user_email = value!;
+                },
+              ),
+              SizedBox(height: 10),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Home Address',
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your home address';
+                  }
+                  return null;
+                },
+                onSaved: (value) {
+                  user_home_address = value!;
+                },
+              ),
+              SizedBox(height: 40),
               ElevatedButton(
                 onPressed: _submitForm,
+                style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 242, 218, 1)),
+                        foregroundColor: MaterialStateProperty.all<Color>(const Color.fromARGB(255, 18, 3, 3)),
+                      ),
                 child: Text('Register'),
               ),
             ],

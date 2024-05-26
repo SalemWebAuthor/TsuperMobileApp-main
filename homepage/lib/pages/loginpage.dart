@@ -1,11 +1,14 @@
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'home.dart';
-import 'register.dart'; // Import the RegisterScreen file
+import 'register.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
+  
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -14,12 +17,12 @@ class LoginPage extends StatefulWidget {
 class _LoginScreenState extends State<LoginPage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final Color customColor = Color.fromRGBO(255, 246, 143, 1);
   String _errorMessage = '';
 
   Future<void> _login() async {
     String username = _usernameController.text;
     String password = _passwordController.text;
-
     try {
       final response = await http.post(
         Uri.parse('https://cocodeveloper.helioho.st/serve/validate.php'),
@@ -38,6 +41,7 @@ class _LoginScreenState extends State<LoginPage> {
       if (response.statusCode == 201) {
         final responseData = json.decode(response.body);
         if (responseData['validation']) {
+
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => const HomePage()),
@@ -64,17 +68,11 @@ class _LoginScreenState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
+      backgroundColor: customColor,
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/background - loginpage.png'),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
           SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(20, 100, 20, 60.0),
@@ -83,12 +81,30 @@ class _LoginScreenState extends State<LoginPage> {
                 children: [
                   if (_errorMessage.isNotEmpty)
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      padding: const EdgeInsets.symmetric(vertical: 15.0),
                       child: Text(
                         _errorMessage,
                         style: const TextStyle(color: Colors.red),
                       ),
                     ),
+                    Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 6.0),
+                    child: Column(
+                      children: [
+                        Image.asset('assets/jeeplogo.png'),
+                        const SizedBox(height: 10),
+                        const Text(
+                          'WELCOME USER!',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 50),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 6.0),
                     child: TextFormField(
@@ -98,10 +114,6 @@ class _LoginScreenState extends State<LoginPage> {
                         filled: true,
                         fillColor: Colors.white,
                         contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
-                        border: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.indigo),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
                       ),
                     ),
                   ),
@@ -114,44 +126,23 @@ class _LoginScreenState extends State<LoginPage> {
                         hintText: 'Password',
                         filled: true,
                         fillColor: Colors.white,
-                        contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
-                        border: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.indigo),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
                       ),
                     ),
                   ),
+                  
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 0.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        TextButton(
-                          onPressed: () {
-                            // Handle Forgot Password action
-                          },
-                          child: const Text(
-                            'Forgot Password?',
-                            style: TextStyle(color: Colors.blue),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15.0),
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
                     child: ElevatedButton(
                       onPressed: _login,
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF0ABF74)),
-                        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                        backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 242, 218, 1)),
+                        foregroundColor: MaterialStateProperty.all<Color>(const Color.fromARGB(255, 18, 3, 3)),
                       ),
                       child: const SizedBox(
                         height: 40,
-                        width: 180,
+                        width: 60,
                         child: Center(
-                          child: Text('Sign In'),
+                          child: Text('Log In'),
                         ),
                       ),
                     ),
@@ -168,13 +159,13 @@ class _LoginScreenState extends State<LoginPage> {
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                        foregroundColor: MaterialStateProperty.all<Color>(const Color(0xFF0ABF74)),
+                        foregroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 0, 1, 1)),
                       ),
                       child: const SizedBox(
                         height: 40,
-                        width: 180,
+                        width: 60,
                         child: Center(
-                          child: Text('Create Account'),
+                          child: Text('Sign Up'),
                         ),
                       ),
                     ),
@@ -216,7 +207,9 @@ class AuthService {
         if (responseData['validation']) { 
           return true;
         } else {
-          throw Exception(responseData['message']);
+          throw Exception(      
+            responseData['message']        
+            );
         }
       } else {
         throw Exception('Failed to connect to the server. Status code: ${response.statusCode}');

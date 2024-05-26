@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:homepage/pages/loginpage.dart';
+import 'package:homepage/pages/qr_scanner_page.dart';
 import 'pages/routes.dart';
 import 'pages/receipt.dart';
 import 'pages/findjeep.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         '/receipt': (context) => ReceiptPage(),
         '/location': (context) => LocationPage(),
         '/find_jeep': (context) => FindJeepPage(),
-        '/pay_online': (context) => PayOnline(),
+        '/pay_online': (context) => QRTab(),
         '/user': (context) => UserPage(),
         '/register': (context) => RegistrationPage()
       },
